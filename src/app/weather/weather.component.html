@@ -1,0 +1,30 @@
+<h2>Weather Forecast</h2>
+
+<button (click)="loadWeather()">Refresh</button>
+
+<p *ngIf="loading">Loading...</p>
+<p *ngIf="error">{{ error }}</p>
+
+<p *ngIf="!loading && !error">
+  Total Forecast Records: {{ totalRecords }}
+</p>
+
+<table *ngIf="!loading && !error">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp (°C)</th>
+      <th>Temp (°F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let w of weatherData"
+        [class.hot]="w.temperatureC > 30">
+      <td>{{ w.date | date }}</td>
+      <td>{{ w.temperatureC }}</td>
+      <td>{{ w.temperatureF }}</td>
+      <td>{{ w.summary }}</td>
+    </tr>
+  </tbody>
+</table>

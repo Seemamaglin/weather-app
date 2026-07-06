@@ -1,0 +1,100 @@
+/* Card container */
+.weather-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+/* Top actions */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Button */
+button {
+  padding: 8px 14px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005ea6;
+}
+
+/* Status text */
+.status {
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f2f5;
+  font-weight: bold;
+}
+
+/* Highlight hot rows */
+.hot {
+  background-color: #ffe5e5;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+  }
+
+  td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
